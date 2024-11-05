@@ -1,0 +1,5 @@
+package payment.service.request;
+
+public class PaymentsRequest {
+
+}

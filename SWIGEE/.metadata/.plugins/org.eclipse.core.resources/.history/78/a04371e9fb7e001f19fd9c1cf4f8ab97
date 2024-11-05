@@ -1,0 +1,5 @@
+package payment.service.entity;
+
+public class Payments {
+
+}

@@ -1,0 +1,12 @@
+package payment.service.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import payment.service.common.UrlConstants;
+
+@RestController
+@RequestMapping(UrlConstants.BASE_API)
+public class PaymentsController {
+
+}

@@ -1,0 +1,9 @@
+package payment.service.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import payment.service.entity.Payments;
+
+public interface PaymentsRepository extends JpaRepository<Payments, Long>{
+
+}

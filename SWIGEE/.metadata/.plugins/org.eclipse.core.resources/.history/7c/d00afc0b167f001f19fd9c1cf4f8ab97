@@ -1,0 +1,62 @@
+package payment.service.serviceImpl;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import payment.service.entity.Payments;
+import payment.service.repository.PaymentsRepository;
+import payment.service.request.PaymentsRequest;
+import payment.service.response.PaymentsResponse;
+import payment.service.service.PaymentsService;
+
+@Service
+public class PaymentsServiceImpl implements PaymentsService{
+
+	@Autowired
+	private PaymentsRepository paymentsRepository;
+	
+	// =================== Create Payment ==================
+	
+	@Override
+	public PaymentsResponse createPayment(PaymentsRequest paymentsRequest) {
+		PaymentsResponse paymentsResponse = null;
+		Payments payments = null;
+		
+		if(paymentsRequest != null) {
+			payments = new Payments();
+			String transactionId = generateTransactionId();
+			BeanUtils.copyProperties(paymentsRequest, payments);
+		}
+		
+		if(payments != null) {
+			paymentsResponse = new PaymentsResponse();
+			payments = paymentsRepository.save(payments);
+			BeanUtils.copyProperties(payments, paymentsResponse);
+		}
+		
+		return paymentsResponse;
+	}
+
+	// ================== Generate Transaction Id ====================
+	
+	private String generateTransactionId() {
+		
+	}
+	
+	// ================== Get Payment Details By Order Id ==============
+	
+	@Override
+	public PaymentsResponse GetPaymentDetailsByOrderId(Long orderId) {
+		PaymentsResponse paymentsResponse = null;
+		Payments payments = null;
+		
+		payments = paymentsRepository.GetPaymentDetailsByOrderId(orderId);
+		if(payments != null) {
+			paymentsResponse = new PaymentsResponse();
+			BeanUtils.copyProperties(payments, paymentsResponse);
+		}
+		return paymentsResponse;
+	}
+
+}

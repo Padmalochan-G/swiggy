@@ -1,0 +1,19 @@
+package user.service.response;
+
+public class TreeDataStructure {
+
+	private Data data;
+
+    private List<TreeDataStructure> children;
+
+    public static class Data {
+
+        Integer id;
+
+        Integer parentId;
+
+        String name;
+
+        String age;
+    }
+}

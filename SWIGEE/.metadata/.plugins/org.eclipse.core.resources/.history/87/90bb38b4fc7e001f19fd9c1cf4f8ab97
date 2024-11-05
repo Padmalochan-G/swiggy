@@ -1,0 +1,26 @@
+package payment.service.entity;
+
+import java.math.BigDecimal;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "payments")
+public class Payments {
+
+	private Long id;
+	
+	private Long orderId;
+	
+	private BigDecimal amount;
+	
+	private String status;
+	
+	private String modeOfPayment;
+	
+	private String transactionId;
+	
+}

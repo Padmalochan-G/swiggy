@@ -1,0 +1,13 @@
+package payment.service;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import payment.service.response.Response;
+
+public interface OrderConfig {
+
+	@GetMapping("http://localhost:9092/order/get/by/id")
+	public ResponseEntity<Response> getOrderById(@RequestParam(required = true) Long id);
+}

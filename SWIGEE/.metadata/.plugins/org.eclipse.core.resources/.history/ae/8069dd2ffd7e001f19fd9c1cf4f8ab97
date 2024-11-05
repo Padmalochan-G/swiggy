@@ -1,0 +1,5 @@
+package payment.service.repository;
+
+public interface PaymentsRepository {
+
+}

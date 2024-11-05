@@ -1,0 +1,22 @@
+package user.service.response;
+
+import java.util.List;
+
+@lombok.Data
+public class TreeDataStructure {
+
+	private Data data;
+
+    private List<TreeDataStructure> children;
+
+    public static class Data {
+
+        Integer id;
+
+        Integer parentId;
+
+        String name;
+
+        String age;
+    }
+}

@@ -1,0 +1,5 @@
+package payment.service.response;
+
+public class PaymentsResponse {
+
+}

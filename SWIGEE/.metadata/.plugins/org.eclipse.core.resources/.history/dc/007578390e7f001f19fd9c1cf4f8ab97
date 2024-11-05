@@ -1,0 +1,10 @@
+package payment.service.serviceImpl;
+
+import org.springframework.stereotype.Service;
+
+import payment.service.service.PaymentsService;
+
+@Service
+public class PaymentsServiceImpl implements PaymentsService{
+
+}
